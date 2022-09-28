@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contexto de apilamiento</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        place-items: center;
+      }
+      .phone {
+        position: relative;
+        border: 8px solid black;
+        border-radius: 40px;
+        height: 600px;
+        width: 300px;
+        background: #ccefff;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+          0 15px 12px rgba(0, 0, 0, 0.22);
+        overflow: hidden;
+      }
+      .phone > div {
+        position: absolute;
+        box-sizing: border-box;
+        /* border: black 1px solid; */
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3),
+          2px 2px 3px rgba(0, 0, 0, 0.8);
+      }
+      .conejo {
+        height: 80px;
+        width: 80px;
+        background: white;
+      }
+      .tierra {
+        background: #9b7653;
+        width: 220px;
+        height: 40%;
+        border-top: green 5px solid;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+      }
+      .arbusto {
+        background-color: green;
+        width: 80%;
+        height: 120px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        bottom: 0;
+      }
+      .layer-1 {
+        bottom: 380px;
+        z-index: 1;
+        right: 60px;
+      }
+      .layer-2 {
+        z-index: 1;
+        background: white;
+        bottom: 380px;
+        left: 60px;
+      }
+      .layer-3 {
+        z-index: 2;
+        left: 0;
+        right: 0;
+        bottom: 180px;
+        margin: 0 auto;
+      }
+      .layer-4 {
+        z-index: 3;
+        bottom: 260px;
+        left: 20px;
+      }
+      .layer-5 {
+        z-index: 4;
+        bottom: 60px;
+      }
+      .layer-6 {
+        z-index: 5;
+        bottom: 200px;
+        right: 20px;
+      }
+      .layer-7 {
+        z-index: 6;
+        right: 0;
+        bottom: 0;
+      }
+      .layer-8 {
+        z-index: 7;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+      }
+      .layer-9 {
+        z-index: 8;
+        left: -50%;
+      }
+      .layer-10 {
+        z-index: 8;
+        right: -50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="phone">
+      <div class="layer-1 conejo"></div>
+      <div class="layer-2 conejo"></div>
+      <div class="layer-3 tierra"></div>
+      <div class="layer-4 conejo"></div>
+      <div class="layer-5 tierra"></div>
+      <div class="layer-6 conejo"></div>
+      <div class="layer-7 tierra"></div>
+      <div class="layer-8 arbusto"></div>
+      <div class="layer-9 arbusto"></div>
+      <div class="layer-10 arbusto"></div>
+    </div>
+  </body>
+</html>
